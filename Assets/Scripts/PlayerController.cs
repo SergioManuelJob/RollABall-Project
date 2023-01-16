@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 // Include the namespace required to use Unity UI and Input System
 using UnityEngine.InputSystem;
 using TMPro;
@@ -20,11 +20,15 @@ public class PlayerController : MonoBehaviour
 
 	private Rigidbody rb;
 	private int count;
+	private int numberOfPickups;
+
+
 
 	// At the start of the game..
 	void Start()
 	{
-		// Assign the Rigidbody component to our private rb variable
+		numberOfPickups = GameObject.FindGameObjectsWithTag("PickUp").Length;
+	// Assign the Rigidbody component to our private rb variable
 		rb = GetComponent<Rigidbody>();
 
 		// Set the count to zero 
@@ -91,10 +95,9 @@ public class PlayerController : MonoBehaviour
 	{
 		countText.text = "Count: " + count.ToString();
 
-		if (count >= 7)
+		if (count == numberOfPickups)
 		{
-			// Set the text value of your 'winText'
-			winTextObject.SetActive(true);
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 		}
 	}
 }
