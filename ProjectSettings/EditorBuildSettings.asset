@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigame 3.unity
     guid: 4ebad28b0fbd28e47bd63b245c2ebb72
+  - enabled: 1
+    path: Assets/Scenes/Minigame 4.unity
+    guid: 59aec1cbe11760f46863482eb20c7163
+  - enabled: 1
+    path: Assets/Scenes/You Won!.unity
+    guid: ef3546ecae64e2e4f869fc669192147f
   m_configObjects: {}
